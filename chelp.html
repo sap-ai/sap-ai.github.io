@@ -4,14 +4,6 @@
   </head>
   <body>
     <h1>Help us by giving us your land, it'll automatically get your lands postion for are ownersip if you click the submit button</h1>
-    <button onclick="db.run(sqlstr)">submit</button>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdRexaT4yDVNVPG1GmKhRJNjw0qhs7qkDFdGE-qPxd9fJMQGg/viewform?embedded=true" width="640" height="374" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
   </body>
 </html>
-<script>
-  const SQL = await initSqlJs({
-  locateFile: file => `https://github.com/sap-ai/sap-ai.github.io/${file}`
-});
-  const db = new SQL.Database();
-  let sqlstr = "CREATE TABLE hello (a float, b float); \
-INSERT INTO hello VALUES (" + position.coords.latitude +  ", " + position.coords.longitude + ");";
-</script>
