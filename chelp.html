@@ -5,6 +5,14 @@
   <body>
     <h1>Help us by giving us your land, it'll automatically get your lands postion for are ownersip if you click the submit button</h1>
     <p></p>
-    <button>submit</button>
+    <button onclick="db.run(sqlstr)">submit</button>
   </body>
 </html>
+<script>
+  const SQL = await initSqlJs({
+  locateFile: file => `https://github.com/sap-ai/sap-ai.github.io/${file}`
+});
+  const db = new SQL.Database();
+  let sqlstr = "CREATE TABLE hello (a float, b float); \
+INSERT INTO hello VALUES (" + position.coords.latitude +  ", " + position.coords.longitude + ");";
+</script>
