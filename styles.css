@@ -1,28 +1,51 @@
+/* Enhanced body styling with background and content presentation */
+body {
+  margin: 60px auto;
+  padding: 40px;
+  max-width: 800px;
+  font-family: 'Helvetica Neue', sans-serif;
+  background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+  color: #333;
+
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  background-color: #ffffffcc; /* fallback color */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+}
+
 /* Style for <h1> */
 h1 {
   font-family: 'Helvetica Neue', sans-serif;
-  font-size: 2.5em;
-  color: #333;
+  font-size: 2.8em;
+  color: #2c3e50;
   margin-bottom: 20px;
+  text-align: center;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.7);
 }
 
 /* Style for <p> */
 p {
   font-family: 'Georgia', serif;
-  font-size: 1.1em;
-  line-height: 1.6;
+  font-size: 1.2em;
+  line-height: 1.7;
   color: #555;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }
 
 /* Style for <a> */
 a {
-  color: #0066cc;
+  color: #0077cc;
   text-decoration: none;
-  transition: color 0.3s ease;
+  font-weight: bold;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
 }
 
 a:hover {
-  color: #004999;
-  text-decoration: underline;
+  color: #005fa3;
+  border-bottom: 2px solid #005fa3;
 }
