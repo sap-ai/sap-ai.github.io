@@ -1,7 +1,7 @@
 const SQL = await initSqlJs({
   // Required to load the wasm binary asynchronously. Of course, you can host it wherever you want
   // You can omit locateFile completely when running in node
-  locateFile: file => `https://sql.js.org/dist/${file}`
+  locateFile: file => `https://github.com/sap-ai/sap-ai.github.io/${file}`
 });
 
 // Create a database
@@ -11,7 +11,10 @@ const db = new SQL.Database();
 
 
 // Execute a single SQL string that contains multiple statements
-let sqlstr = "CREATE TABLE hello (a int, b char); \
+let sqlstr = "CREATE TABLE name (a int, b char); \
 INSERT INTO hello VALUES (0, 'hello'); \
 INSERT INTO hello VALUES (1, 'world');";
-db.run(sqlstr); // Run the query without
+function person(per) {
+  db.run("CREATE TABLE name (a char); \
+INSERT INTO hello VALUES ('" + per + "');");
+}
