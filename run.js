@@ -15,8 +15,11 @@
     INSERT INTO users (name, email) VALUES ('Alice', 'alice@example.com');
     INSERT INTO users (name, email) VALUES ('Bob', 'bob@example.com');
   `);
-
+  function post(te, nm) {
+    db.run("INSERT INTO " + te + "(v) VALUES ('" + nm + "');");
+  }
   // Query the data
+  function look
   const result = db.exec("SELECT * FROM users");
 
   // Log the results
