@@ -8,12 +8,10 @@
 
   // Create a database
   const db = new SQL.Database();
-
+  let i = 0;
   // Create a table and insert some data
   db.run(`
     CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT, email TEXT);
-    INSERT INTO users (name, email) VALUES ('Alice', 'alice@example.com');
-    INSERT INTO users (name, email) VALUES ('Bob', 'bob@example.com');
   `);
   function post(te, nm) {
     db.run("INSERT INTO " + te + "(v) VALUES ('" + nm + "');");
