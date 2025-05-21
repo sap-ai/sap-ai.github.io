@@ -15,8 +15,9 @@
     db.run("INSERT INTO " + te + "(v) VALUES ('" + nm + "');");
   }
   // Query the data
+  const result = [];
   function look(obj) {
-    const result = db.exec("SELECT * FROM users");
+    result = db.exec("SELECT * FROM " + obj);
   }
   // Log the results
   if (result.length > 0) {
