@@ -8,8 +8,6 @@
 
   // Create a database
   const db = new SQL.Database();
-  let i = 0;
-  // Create a table and insert some data
   db.run(`
     CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT, email TEXT);
   `);
@@ -17,9 +15,9 @@
     db.run("INSERT INTO " + te + "(v) VALUES ('" + nm + "');");
   }
   // Query the data
-  function look
-  const result = db.exec("SELECT * FROM users");
-
+  function look(obj) {
+    const result = db.exec("SELECT * FROM users");
+  }
   // Log the results
   if (result.length > 0) {
     const columns = result[0].columns;
