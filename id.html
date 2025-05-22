@@ -1,6 +1,9 @@
-<title>Webbby</title>
+<title>Webbby layout, a to put  object where mouse is</title>
 <button></button>
 <script>
+function startGame() {
+  myGamePiece = new component(30, 30, "red", 10, 120);
+}
 function saveTextToFile(filename, text) {
     // Create a blob with the text content
     const blob = new Blob([text], { type: 'text/plain' });
