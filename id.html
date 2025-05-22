@@ -1,12 +1,20 @@
-<title>Search for movie plots</title>
-<title>Search for movie plots from wiki:</title>
-<input></input>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<title>Webbby</title>
 <script>
-  function scrape(art) {
-    $('div.article-title').each((i, el) => console.log($(el).text()));
-  }
-  $.get("https://www.scrapingcourse.com/ecommerce/", function(html) { 
-	  const productHTMLElements = $(html).find("li.product"); 
-  });
-</script>
+function saveTextToFile(filename, text) {
+    // Create a blob with the text content
+    const blob = new Blob([text], { type: 'text/plain' });
+
+    // Create a temporary anchor element
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = filename;
+
+    // Trigger the download
+    document.body.appendChild(a);
+    a.click();
+
+    // Clean up
+    document.body.removeChild(a);
+    URL.revokeObjectURL(a.href);
+}
+<script></script>
