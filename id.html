@@ -6,4 +6,7 @@
   function scrape(art) {
     $('div.article-title').each((i, el) => console.log($(el).text()));
   }
+  $.get("https://www.scrapingcourse.com/ecommerce/", function(html) { 
+	  const productHTMLElements = $(html).find("li.product"); 
+  });
 </script>
