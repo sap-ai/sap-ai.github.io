@@ -1,1 +1,63 @@
-<script src="https://cdn.jsdelivr.net/npm/ollama@0.5.15/+esm"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ollama API Integration</title>
+  <!-- Add any CSS styling you need -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    #result {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ollama AI Model</h1>
+  <p>Enter a prompt to send to the Ollama model:</p>
+  <input type="text" id="userInput" placeholder="Type your input here" />
+  <button id="submitBtn">Submit</button>
+
+  <div id="result"></div>
+
+  <script>
+    document.getElementById('submitBtn').addEventListener('click', async () => {
+      const userInput = document.getElementById('userInput').value;
+      let ut = '';
+      if (userInput.trim() === '') {
+        alert("Please enter a prompt.");
+        return;
+      }
+      else{
+        ut = userInput.trim();
+      }
+      // Assuming Ollama has an API endpoint, here we are calling a hypothetical API.
+      try {
+        const response = await fetch(' http://localhost:11434/api/generate', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'model': 'mistral',
+            'prompt': ut
+          },
+          body: JSON.stringify({ prompt: userInput })
+        });
+
+        const data = await response.json();
+
+        // Display the result from the API
+        document.getElementById('result').innerText = data.response || "No response from model.";
+      } catch (error) {
+        console.error("Error calling Ollama API:", error);
+        document.getElementById('result').innerText = "An error occurred while connecting to the model.";
+      }
+    });
+  </script>
+</body>
+</html>
