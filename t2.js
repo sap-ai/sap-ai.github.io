@@ -1,2 +1,2 @@
 let search = document.getElementById("sc").innerHTML;
-String.fromCharCode(97);
+"a".charCodeAt(0);
