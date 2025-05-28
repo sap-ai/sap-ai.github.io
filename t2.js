@@ -1,1 +1,1 @@
-document.getElementById("demo").innerHTML = "Hello JavaScript!";
+let search = document.getElementById("sc").innerHTML;
