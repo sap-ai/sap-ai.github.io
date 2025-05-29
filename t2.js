@@ -1,3 +1,3 @@
 let search = document.getElementById("sc").innerHTML;
-let result = test.slice(0, 1);
+let result = test.slice(0, l);
 "a".charCodeAt(0);
