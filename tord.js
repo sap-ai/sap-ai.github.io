@@ -1,6 +1,6 @@
 const cars = [];
 function sub() {
-  for (let x of cars) {
+  for (let x of 5) {
     cars[x] =;
   }
 }
