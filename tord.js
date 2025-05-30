@@ -1,2 +1,3 @@
+const cars = [];
 function sub() {
 }
